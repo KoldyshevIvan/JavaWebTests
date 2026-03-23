@@ -14,12 +14,12 @@ public class LoginPage extends BasePage {
     private SelenideElement passwordField = $("[name='st.password']");
     private SelenideElement loginButton = $("[label='Войти']");
     private SelenideElement forgotPasswordLink = $("[aria-label='Не получается войти?']");
-    //private SelenideElement registrationButton = $("[data-l='t,register']"); hidden
     private SelenideElement registrationButton = $x("//span[text()='Зарегистрироваться']");
     private SelenideElement vkButton = $("[data-l='t,vkc']");
     private SelenideElement mailRuButton = $("[data-l='t,mailru']");
     private SelenideElement yandexButton = $("[data-l='t,yandex']");
     private SelenideElement errorMessage = $x("//span[contains(@class, 'LoginForm-module__error')]");
+    private SelenideElement goToRecoveryButton = $x("//span[text()='Восстановить']");
 
     {
         verifyPageElements();
@@ -68,6 +68,16 @@ public class LoginPage extends BasePage {
         passwordField.shouldBe(visible).click();
         passwordField.setValue(password);
         loginButton.shouldBe(visible).click();
+    }
+
+    @Step("Входим по кнопке 'Войти'")
+    public void clickLogin() {
+        loginButton.shouldBe(visible).click();
+    }
+
+    @Step("Переход на страницу восстановления профиля")
+    public void goToRecovery() {
+        goToRecoveryButton.shouldBe(visible).click();
     }
 
     @Step("Переходим на страницу восстановления пароля")
