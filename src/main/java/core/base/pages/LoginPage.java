@@ -12,6 +12,7 @@ public class LoginPage extends BasePage {
 
     private SelenideElement usernameField = $("[name='st.email']");
     private SelenideElement passwordField = $("[name='st.password']");
+    private SelenideElement qrLoginButton = $("[data-l='t,qr_tab']");
     private SelenideElement loginButton = $("[label='Войти']");
     private SelenideElement forgotPasswordLink = $("[aria-label='Не получается войти?']");
     private SelenideElement registrationButton = $x("//span[text()='Зарегистрироваться']");
@@ -81,7 +82,7 @@ public class LoginPage extends BasePage {
     }
 
     @Step("Переходим на страницу восстановления пароля")
-    private void openForgotPasswordPage() {
+    public void openForgotPasswordPage() {
         forgotPasswordLink.shouldBe(visible).click();
     }
 
@@ -103,5 +104,10 @@ public class LoginPage extends BasePage {
     @Step("Входим на сайт через Yandex")
     private void loginYandex() {
         yandexButton.shouldBe(visible).click();
+    }
+
+    @Step("Переходим на вкладку входа по qr")
+    public void openQrLoginTab() {
+        qrLoginButton.shouldBe(visible).click();
     }
 }
