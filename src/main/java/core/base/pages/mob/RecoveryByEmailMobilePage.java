@@ -1,16 +1,16 @@
-package core.base.pages;
+package core.base.pages.mob;
 
 import com.codeborne.selenide.SelenideElement;
-import core.base.BasePage;
+import core.base.MobileBasePage;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
-public class RecoveryByEmailPage extends BasePage {
+public class RecoveryByEmailMobilePage extends MobileBasePage {
 
-    private SelenideElement emailField = $("[name = 'email']");
-    private SelenideElement getCodeButton = $("[data-l = 't,submit']");
+    private SelenideElement emailMobField = $("[name = 'email']");
+    private SelenideElement getCodeMobButton = $("[name = 'getCode']");
 
     {
         verifyPageElements();
@@ -18,7 +18,7 @@ public class RecoveryByEmailPage extends BasePage {
 
     @Step("Проверяем видимость всех элементов на странице восстановления профиля по почте")
     private void verifyPageElements() {
-        emailField.shouldBe(visible);
-        getCodeButton.shouldBe(visible);
+        emailMobField.shouldBe(visible);
+        getCodeMobButton.shouldBe(visible);
     }
 }
