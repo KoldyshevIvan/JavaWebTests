@@ -1,9 +1,9 @@
-package tests;
+package tests.web;
 
 import core.base.BaseTest;
-import core.base.pages.AnonymRecoveryPage;
-import core.base.pages.LoginPage;
-import core.base.pages.RecoveryByPhonePage;
+import core.base.pages.web.AnonymRecoveryPage;
+import core.base.pages.web.LoginPage;
+import core.base.pages.web.RecoveryByPhonePage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

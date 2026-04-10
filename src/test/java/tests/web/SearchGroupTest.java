@@ -1,10 +1,8 @@
-package tests;
+package tests.web;
 
 import core.base.BaseTest;
-import com.codeborne.selenide.SelenideElement;
-import core.base.pages.AnonymRecoveryPage;
-import core.base.pages.LoginPage;
-import core.base.pages.SearchGroupsPage;
+import core.base.pages.web.LoginPage;
+import core.base.pages.web.SearchGroupsPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
